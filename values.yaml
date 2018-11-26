@@ -11,17 +11,17 @@ cp-zookeeper:
   imagePullSecrets:
   #  - name: "regcred"
   heapOptions: "-Xms512M -Xmx512M"
-  persistence:
-    enabled: false
+  #persistence:
+ #   enabled: false
     ## The size of the PersistentVolume to allocate to each Zookeeper Pod in the StatefulSet. For
     ## production servers this number should likely be much larger.
     ##
     ## Size for Data dir, where ZooKeeper will store the in-memory database snapshots.
-    dataDirSize: 5Gi
+ #   dataDirSize: 1Gi
     # dataDirStorageClass: ""
 
     ## Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snaphots.
-    dataLogDirSize: 5Gi
+  #  dataLogDirSize: 5Gi
     # dataLogDirStorageClass: ""
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
@@ -46,10 +46,10 @@ cp-kafka:
   imagePullSecrets:
   #  - name: "regcred"
   heapOptions: "-Xms512M -Xmx512M"
-  persistence:
-    enabled: false
+ # persistence:
+#    enabled: false
     # storageClass: ""
-    size: 5Gi
+#    size: 5Gi
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
